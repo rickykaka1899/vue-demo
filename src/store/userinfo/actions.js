@@ -5,7 +5,7 @@ import config from '../../config/config'
 import * as types from './mutations_types'
 
 const CGI = {
-	memberInfoUrl: '[phpApi]/member/getMemberBaseInfo'
+	memberInfoUrl: '[javaApi]/users/code'
 }
 module.exports = {
 	/**
@@ -16,9 +16,11 @@ module.exports = {
 	setUserInfo: ({commit, state}, {vue}) => {
 		return new Promise((reslove, reject) => {
 			if(!state.userinfo.member_id){
-				vue.$http.get(CGI.memberInfoUrl).then((rs) => {
+				debugger
+				var code = vue.$route.query.code
+				vue.$http.get(CGI.memberInfoUrl+"?code="+code).then((rs) => {
 					let data = rs.data || {}
-					if(data.code === 0){ //请求成功
+					if(data.code === 200){ //请求成功
 						commit(types.UPDATE_USERINFO, data.data)
 						reslove(data.data)
 					} else {

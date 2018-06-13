@@ -3,7 +3,7 @@ var merge = require('webpack-merge')
 var config = require('./base.js')
 
 var webpackConfig = merge(config, {
-	devtool: false
+	devtool: true
 })
 
 module.exports = webpackConfig

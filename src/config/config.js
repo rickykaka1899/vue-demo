@@ -1,8 +1,7 @@
 module.exports = {
   version: '1.0',
   development: {
-    phpApi: 'https://xxx.xxxx.com', //开发环境php接口地址
-    javaApi: 'https://xxx.xxxx.com', //开发环境java接口地址
+    javaApi: 'http://172.16.8.64:7777', //开发环境java接口地址
   },
   test: {
     phpApi: 'https://xxx.xxxx.com', //测试环境php接口地址
