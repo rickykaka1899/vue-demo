@@ -7,6 +7,9 @@
 	  				<img v-show="route !== '/'" src="../asset/images/tab_me_norm.png" alt="">
 	  				<img v-show="route === '/'" src="../asset/images/tab_me_sel.png" alt="">
 	  			</div>
+                <div class="nav-title">
+                    <p>课程</p>
+                </div>
 	  		</router-link>
 	  	</nav>
 	  	<nav class="nav nav-cinama" :class="{'cur-page': route === '/detail'}">
@@ -15,11 +18,11 @@
 					<img v-show="route !== '/detail'" src="../asset/images/tab_board_norm.png" alt="">
 					<img v-show="route === '/detail'" src="../asset/images/tab_board_sel.png" alt="">
 				</div>
+                <div class="nav-title">
+                    <p>发布的</p>
+                </div>
 			</router-link>
 	  	</nav>
-  	</section>
-  	<section v-show="!showNav" @click="goBack" style="width: 100%">
-  		<p class="back"> < </p>
   	</section>
   </footer>
 </template>
@@ -46,11 +49,11 @@ export default{
 
 <style>
 .footer {
-	background-color: #fff;
+	background-color: #F2F2F2;
 	position: fixed;
 	width: 100%;
-	bottom: 20px;
-	height: 150px;
+	bottom: 0px;
+	height: 3rem;
 	display: -webkit-box; 
 	padding-top: 7px;
 	box-sizing: border-box;
@@ -60,27 +63,27 @@ export default{
 	-webkit-box-flex: 1;
 	text-align: center;
 	color: #8a869e;
+    margin-top:0.2rem;
 }
 .footer .cur-page.nav{
 	color: #ff4d64;
 }
 .nav-icon {
-	width: 100px;
-	height: 100px;
+	width: 1.5rem;
+	height: 1.5rem;
 	margin: 0 auto;
 }
 .nav-icon img {
 	width: 100%;
 	height: 100%;
 }
-.nav-movie::after,
-.nav-cinama::after,
-.nav-me::after {
-	padding-top: 2px;
+.nav-title{
+    /* padding-top: 0; */
 	text-align: center;
-	width: 30px;
+	width: 5rem;
 	display: inline-block;
-	font-size: 12px;
+	font-size: 0.7rem;
+    color: #000000;
 }
 .nav-class::after {
 	content: "课程";
