@@ -7,5 +7,10 @@ module.exports = {
 
 	[types.REMOVE_USERINFO] (state) {
 		state.userinfo = {}
+	},
+
+	[types.UPDATE_USERAUTHINFO] (state, userauth) {
+		debugger
+		state.userauth = userauth || {}
 	}
 }

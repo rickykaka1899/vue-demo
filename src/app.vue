@@ -32,28 +32,38 @@ export default {
         this.init();
         this.routeChange();
     },
+    update(){
+        this.stateChange();
+    },
     methods:{
         ...mapMutations({
             updateStorage: types.UPDATE_STORAGE
         }),
         ...mapActions({
-            setUserInfo: 'setUserInfo'
+            setUserInfo: 'setUserInfo',
+            getUserAuth: 'getUserAuth'
         }),
         init(){
             this.updateStorage()
             this.setUserInfo({ vue: this }).then(rs => {
                 this.hasUserInfo = true
+                this.getUserAuth({vue: this}).then(rs => {
+                    console.log("getAuths")
+                })
             }).catch(error => {
                 console.log(error)
             })
         },
         routeChange () {
             let path = this.$route.path
-            if (path === '/' || path === '/detail') {
+            if (path === '/' || path === '/detail' || path === '/class' || path === '/classpub') {
                 this.showNav = true
             } else {
                 this.showNav = false
             }
+        },
+        stateChange(){
+            console.log("state changed");
         }
     },
 }

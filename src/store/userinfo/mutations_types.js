@@ -1,5 +1,7 @@
 //更新用户信息
 export const UPDATE_USERINFO = 'UPDATE_USERINFO'
+//获取用户全新
+export const UPDATE_USERAUTHINFO = 'UPDATE_USERAUTHINFO'
 
 //清空用户信息
 export const REMOVE_USERINFO = 'REMOVE_USERINFO'

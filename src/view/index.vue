@@ -30,12 +30,12 @@ export default {
 <style scoped>
     .header{
         text-align: center;
-        font-size: 20px;
-        padding: 100px 0;
+        font-size: 1.25rem;
+        padding: 6.25rem 0;
     }
     .detail-link{
         color: #747574;
-        font-size: 14px;
+        font-size: 0.875rem;
         text-decoration: none;
     }
 </style>
